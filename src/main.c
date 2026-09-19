@@ -351,14 +351,14 @@ int main(int argc, char* argv[]) {
 				syscall(SYS_close, in);
 				while (pc < prog_size) {
 					char c = prog[pc];
-					if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '-' && in_construct == 1) {
+					if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '-' && in_construct == 1) { /* Pushing the constructed number */
 						in_construct = 0;
 						stack_pointer += 1;
 						stack[stack_pointer] = last_construct;
 						last_construct = 0;
 						pc += 1;
 						continue;
-					} else if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '-' && in_construct == 0) {
+					} else if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '-' && in_construct == 0) { /* Constructing the number */
 						in_construct = 1;
 						last_construct *= 10;
 						last_construct += ((int)c) - 48;
