@@ -320,7 +320,7 @@ int main(int argc, char* argv[]) {
 				rmdir(argv[2]);
 			}
 			if (strcmp(argv[1], "msli") == 0) { // Micronium stack language interpreter (msli)
-				intptr_t stack[64];
+				intptr_t stack[4096];
 				intptr_t stack_pointer = 0;
 				char c;
 				intptr_t n;
