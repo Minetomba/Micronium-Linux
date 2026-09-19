@@ -1,1 +1,2 @@
 $ 64 + @ 65 + . 1 + $ 64 + @ 1 + $ 64 + ! 0 $ 64 + @ 26 ? $ 64 + !
+this is supposed to print the english alphabet in uppercase
