@@ -364,8 +364,7 @@ int main(int argc, char* argv[]) {
 						last_construct += ((int)c) - 48;
 						pc += 1;
 						continue;
-					}
-					if (c == '@') { /* Get */
+					} else if (c == '@') { /* Get */
 						stack[stack_pointer] = *(intptr_t*)stack[stack_pointer];
 					} else if (c == '!') { /* Store */
 						*(intptr_t*)stack[stack_pointer] = stack[stack_pointer - 1];
