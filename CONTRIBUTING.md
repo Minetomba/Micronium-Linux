@@ -54,3 +54,5 @@ Last commit message's integer value incremented where the first commit message i
 GPL-3.0-or-later. See [LICENSE](LICENSE).
 Copyright (C) 2026 minetomba <minetomba@proton.me>.
 If you fork or reuse this, keep this notice and the license intact.
+# Security Vulnerabilities
+Report at <minetomba@proton.me>, expect a response or patch within 7 days.
