@@ -14,6 +14,7 @@ Spacing is added before and after every operator that may arithmetically or logi
 All includes are at the top, right below the license/copyright message.
 ## Comments
 Comments are added where the code doesn't explain what it does. Comments are exempt from all newline/indentation rules and shall be added at a position wherever clearer.
+Comments are used at the beggining of a code block to name that area.
 # Building
 At the root of this repository with musl-gcc installed on a Linux-running system with bash:
 ```bash
