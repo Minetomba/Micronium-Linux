@@ -1,4 +1,6 @@
 # Code structure
+## C
+C89 only.
 ## Newlines
 Newlines shall be appended after each character within the defined list of characters "{};" or at the character closing the name of what to include at a line that starts with #include. Newlines can be added after the closure of an area of code. Exemptions include:
 - Comments (May be added wherever meaning is clearer);
@@ -9,7 +11,7 @@ Indentation starts as 0 by default, and on each line N tabs prefix the following
 Indentation level is incremented by the character '{' and decremented by the character '}'.
 Indentation is typed as the 9th ASCII character.
 ## Spacing
-Spacing is added before and after every operator that may arithmetically or logically modify/output a number/variable/memory slot from an input number/variable/memory slot. Unary operators are exempt and should only have spacing before them but not after the operator.
+Spacing is added before and after every operator that may arithmetically or logically modify/output a number/variable/memory slot from an input number/variable/memory slot. Unary operators are exempt and should only have spacing before them but not after the operator. Attributions like "foo.x", "foo[x]" or "foo->x" are exempt and must not have spacing.
 ## Includes
 All includes are at the top, right below the license/copyright message.
 ## Comments

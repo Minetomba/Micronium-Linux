@@ -1,3 +1,3 @@
 #!/bin/bash
-musl-gcc -static src/main.c -o micronium-linux
+musl-gcc -Wall -Wextra -Werror -pedantic -static src/main.c -o micronium-linux
 strip micronium-linux
