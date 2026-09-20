@@ -142,6 +142,7 @@ int initsys() {
 	return 0;
 }
 
+/* Main Logic */
 int main(int argc, char* argv[]) {
 	if (argc == 1) {
 		if (!isroot()) {
