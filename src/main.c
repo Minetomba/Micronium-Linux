@@ -327,17 +327,14 @@ int main(int argc, char* argv[]) {
 				int last_construct = 0;
 				while (argv[2][pc] != '\0') {
 					char c = argv[2][pc];
-					if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '-' && in_construct == 1) { /* Pushing the constructed number */
+					if ((c <= '0' || c >= '9') && in_construct == 1) { /* Pushing the constructed number */
 						in_construct = 0;
 						stack_pointer += 1;
 						stack[stack_pointer] = last_construct;
 						last_construct = 0;
 					} else if (c >= '0' && c <= '9') { /* Constructing the number */
 						in_construct = 1;
-						last_construct = last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct;
-						last_construct += ((int)c) + -48;
-					} else if (c == '-') {
-						last_construct = (~last_construct) + 1;
+						last_construct = last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + ((int)c) + -48;
 					} else if (c == '@') { /* Get */
 						stack[stack_pointer] = *(intptr_t*)stack[stack_pointer];
 					} else if (c == '!') { /* Store */
@@ -345,6 +342,9 @@ int main(int argc, char* argv[]) {
 						stack_pointer += -2;
 					} else if (c == '+') { /* Add */
 						stack[stack_pointer + -1] = stack[stack_pointer + -1] + stack[stack_pointer];
+						stack_pointer += -1;
+					} else if (c == '~') { /* NOr */
+						stack[stack_pointer + -1] = ~(stack[stack_pointer + -1] | stack[stack_pointer]);
 						stack_pointer += -1;
 					} else if (c == '?') { /* Branch */
 						if (stack[stack_pointer - 1] < stack[stack_pointer]) {
