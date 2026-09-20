@@ -11,14 +11,16 @@ Indentation is typed as the 9th ASCII character.
 ## Spacing
 Spacing is added before and after every operator that may arithmetically or logically modify/output a number/variable/memory slot from an input number/variable/memory slot. Unary operators are exempt and should only have spacing before them but not after the operator.
 ## Includes
-All includes are at the top.
+All includes are at the top, right below the license/copyright message.
 ## Comments
 Comments are added where the code doesn't explain what it does. Comments are exempt from all newline/indentation rules and shall be added at a position wherever clearer.
 # Specific area rules (specified by a comment with the name of the area where each letter after a space is uppercase)
 ## License/Copyright
 To not be modified.
 ## Includes
-To not be modified.
+To not be modified with the exception of the code depending on an irreplaceable library.
+Must be statically linkable.
+Must only use musl libc.
 ## Constants
 Macros defined by #define that may assist in the configuration of this program shall only be added here.
 ## Signal Handler
@@ -37,7 +39,16 @@ To not be modified with the exception of bugs.
 To not be modified with the exception of bugs or new features.
 ## Main Logic
 To not be modified with the exception of bugs or new features.
-# Vocabulation
-## Before/Afer
-"Before" shortened in this context with "B" and "After" shortened in this context with "A". Token actioned upon shortened in this context with "T".
-Positioning is done as "BTA".
+# Building
+At the root of this repository with musl-gcc installed on a Linux-running system with bash:
+```bash
+./compile.sh
+```
+# Commit messages
+Last commit message's integer value incremented where the first commit message is "1", the second one is "2", and so on. The "git diff" shows the changes, not the commit message.
+# Other notes
+- Patches can be sent through GitHub.
+# License
+GPL-3.0-or-later. See [LICENSE](LICENSE).
+Copyright (C) 2026 minetomba <minetomba@proton.me>.
+If you fork or reuse this, keep this notice and the license intact.

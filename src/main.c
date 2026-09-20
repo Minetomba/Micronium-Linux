@@ -80,7 +80,7 @@ void initfs() {
 		if (fd > 2) {
 			close(fd);
 		}
-    }
+	}
 
 	/* Directories */
 	syscall(SYS_mkdir, "/proc", 0555);
