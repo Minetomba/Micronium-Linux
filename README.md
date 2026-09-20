@@ -16,12 +16,7 @@ All binaries in initconf.txt get launched as root, which is good because it forc
 ## Compile-time dependencies
 - musl-gcc, bash/ash, and Linux.
 ## Features
-Micronium-Linux is not an init system, it is more than that, as it contains most actually used binaries busybox would contain (without all the macro bloat busybox includes), hence why it is so small yet combining everything from an init system to gnu utils to its own forth-like stack programming language in one single 500-line C file.
-## Micronium Stack Interpreted Language
-Here's an example that prints the uppercase english alphabet:
-```
-1 $ 8 + @ ~ 1 + $ 128 + ! $ 128 + @ 66 + . $ 128 + @ 1 + $ 128 + ! 25 $ 128 + @ 25 ?
-```
+Micronium-Linux is not an init system, it is more than that, as it contains most actually used binaries busybox would contain (without all the macro bloat busybox includes), hence why it is so small yet combining everything from an init system to gnu utils in one single 500-line C file.
 # Contributing
 ### Code structure
 #### Newlines

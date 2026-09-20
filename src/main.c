@@ -336,48 +336,6 @@ int main(int argc, char* argv[]) {
 			if (strcmp(argv[1], "rmdir") == 0) {
 				rmdir(argv[2]);
 			}
-			if (strcmp(argv[1], "msli") == 0) { // Micronium stack language interpreter (msli)
-				intptr_t stack[4096];
-				intptr_t stack_pointer = 1;
-				size_t pc = 0;
-				intptr_t in_construct = 0;
-				intptr_t last_construct = 0;
-				while (argv[2][pc] != '\0') {
-					char c = argv[2][pc];
-					if ((c <= '0' || c >= '9') && in_construct == 1) { /* Pushing the constructed number */
-						in_construct = 0;
-						stack_pointer += 1;
-						stack[stack_pointer] = last_construct;
-						last_construct = 0;
-					} else if (c >= '0' && c <= '9') { /* Constructing the number */
-						in_construct = 1;
-						last_construct = last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + last_construct + ((int)c) + -48;
-					} else if (c == '@') { /* Get */
-						stack[stack_pointer] = *(intptr_t*)stack[stack_pointer];
-					} else if (c == '!') { /* Store */
-						*(intptr_t*)stack[stack_pointer] = stack[stack_pointer + ~1 + 1];
-						stack_pointer += ~2 + 1;
-					} else if (c == '+') { /* Add */
-						stack[stack_pointer + ~1 + 1] = stack[stack_pointer + ~1 + 1] + stack[stack_pointer];
-						stack_pointer += ~1 + 1;
-					} else if (c == '~') { /* NOr */
-						stack[stack_pointer + ~1 + 1] = ~(stack[stack_pointer + ~1 + 1] | stack[stack_pointer]);
-						stack_pointer += ~1 + 1;
-					} else if (c == '?') { /* Branch */
-						if (stack[stack_pointer + ~1 + 1] < stack[stack_pointer]) {
-							pc = stack[stack_pointer + ~2 + 1] + ~1 + 1;
-						}
-						stack_pointer += ~3 + 1;
-					} else if (c == '$') { /* Stack base address */
-						stack_pointer += 1;
-						stack[stack_pointer] = (intptr_t)&stack[0];
-					} else if (c == '.') { /* Output */
-						printf("%c", (char)stack[stack_pointer]);
-						stack_pointer += ~1 + 1;
-					}
-					pc += 1;
-				}
-			}
 		}
 		if (argc == 4) {
 			if (strcmp(argv[1], "kill") == 0) {
