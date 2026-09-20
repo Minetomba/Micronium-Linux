@@ -25,7 +25,7 @@ Last commit message's integer value incremented where the first commit message i
 # Other notes
 - Patches can be sent through GitHub as a pull request.
 # License
-GPL-3.0-or-later. See [LICENSE](LICENSE).
+GPL-3.0-only. See [LICENSE](LICENSE).
 Copyright (C) 2026 minetomba <minetomba@proton.me>.
 If you fork or reuse this, keep this notice and the license intact.
 # Security Vulnerabilities

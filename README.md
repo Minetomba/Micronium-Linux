@@ -23,6 +23,6 @@ All binaries in initconf.txt get launched as root, which is good because it forc
 Micronium-Linux is not an init system, it is more than that, as it contains most actually used binaries busybox would contain (without all the macro bloat busybox includes), hence why it is so small yet combining everything from an init system to gnu utils to its own forth-like stack programming language in one single 500-line C file.
 
 ## License
-GPL-3.0-or-later. See [LICENSE](LICENSE).
+GPL-3.0-only. See [LICENSE](LICENSE).
 Copyright (C) 2026 minetomba <minetomba@proton.me>.
 If you fork or reuse this, keep this notice and the license intact.
